@@ -1,6 +1,8 @@
 import { createMuiTheme, responsiveFontSizes } from "@material-ui/core";
 import { red } from "../colors";
 
+// TODO: Should be updated
+
 let theme = createMuiTheme({
   typography: {
     fontFamily: "Audrey",
