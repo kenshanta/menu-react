@@ -1,46 +1,27 @@
 import { observable, action, computed, runInAction, autorun } from 'mobx';
 // import { AuthService } from '../services';
 // import { stationStore } from './stationStore';
-// import { Locales } from '../utils/enums/stationEnums';
+
+import {IProduct} from '../utils/interfaces'
 import { createContext, useContext } from 'react';
 import { AxiosError } from 'axios';
 import Axious from '../services/api';
 
-export class AuthStore {
+export class MenuStore {
 //   @observable userLocale: Locales = Locales.English; // an employee can select his preffered locale
   @observable errorMessage = '';
   @observable loading = false;
+  @observable productsList: IProduct[] | null = []
 
 
-  /**
-   * @description logs out from the system completly back to the manager RFID page
-   */
   @action.bound
-  resetSystem() {
-    // stationStore.clearUserStations();
-    // clear local storage
-    localStorage.clear();
-    // stationStore.clearData();
+  setProductsList(products: IProduct[] | null) {
+    this.productsList = products;
   }
-
-//   @action.bound
-//   changeSystemLanguage(lang: Locales) {
-//     this.userLocale = lang;
-//   }
 }
 
-export const authStore = new AuthStore();
+export const menuStore = new MenuStore();
 
-// autorun reacts to just everything that is used in its function
-autorun(() => {
-//   if (authStore.isLoggedIn) {
-    // add auth token to headers
-    // Axious.defaults.headers.common['Authorization'] = `Bearer ${authStore.authToken}`;
-//   } else {
-    // remove axios auth token headre
-//   }
-});
+const MenuStoreContext = createContext(menuStore);
 
-const AuthStoreContext = createContext(authStore);
-
-export const useAuthStore = () => useContext(AuthStoreContext);
+export const useMenuStore = () => useContext(MenuStoreContext);
