@@ -1,1 +1,1 @@
-export * from "./renameMeInterfaces"
+export * from "./product"
