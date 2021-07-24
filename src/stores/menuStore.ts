@@ -1,25 +1,46 @@
-import { observable, action, computed, runInAction, autorun } from 'mobx';
-// import { AuthService } from '../services';
-// import { stationStore } from './stationStore';
-
-import {IProduct} from '../utils/interfaces'
-import { createContext, useContext } from 'react';
-import { AxiosError } from 'axios';
-import Axious from '../services/api';
+import { observable, action, makeObservable, toJS } from "mobx";
+import { ICategory, IProduct, ISubCategory } from "../utils/interfaces";
+import { createContext, useContext } from "react";
 
 export class MenuStore {
-//   @observable userLocale: Locales = Locales.English; // an employee can select his preffered locale
-  @observable errorMessage = '';
+  //   @observable userLocale: Locales = Locales.English; // an employee can select his preffered locale
+  @observable errorMessage = "";
   @observable loading = false;
-  @observable productsList: IProduct[] | null = []
+  @observable productsList: IProduct[] | null = [];
+  @observable localeLanguage: string = "en";
+  @observable localeCategories: any = [];
+  @observable localeProducts: any = [];
+  @observable localeCategoriesList: ICategory[] = [];
+  @observable localeSubCategories: ISubCategory[] = [];
 
-
-  @action.bound
-  setProductsList(products: IProduct[] | null) {
-    this.productsList = products;
+  constructor() {
+    makeObservable(this);
   }
-}
+  @action
+  setLocaleSubCategories = (subCatgories: any) => {
+    this.localeSubCategories = subCatgories;
+  };
 
+  @action
+  setLocaleCategories = (categories: any) => {
+    this.localeCategories = categories;
+  };
+
+  @action
+  setLocaleProducts = (products: any) => {
+    this.localeProducts = products;
+  };
+
+  @action
+  setLocaleCategoriesList = (categoriesList: any) => {
+    this.localeCategoriesList = toJS(categoriesList);
+  };
+
+  @action
+  setLocaleLanguage = (language: string) => {
+    this.localeLanguage = language;
+  };
+}
 export const menuStore = new MenuStore();
 
 const MenuStoreContext = createContext(menuStore);

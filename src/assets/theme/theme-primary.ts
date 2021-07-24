@@ -1,52 +1,72 @@
 import { createMuiTheme, responsiveFontSizes } from "@material-ui/core";
-import { red } from "../colors";
-
-// TODO: Should be updated
+import { carissma, tangaroa, emerald } from "../colors";
 
 let theme = createMuiTheme({
   typography: {
-    fontFamily: "Audrey",
-    h1: {
-      fontSize: "3rem",
+    h3: {
+      fontSize: "2.5rem",
+    },
+    h4: {
+      fontSize: "2rem",
+    },
+    h5: {
+      fontFamily: "Audrey",
+      fontSize: "1.5rem",
       fontWeight: 700,
+      color: emerald[700],
+    },
+    h6: {
+      fontFamily: " Audrey",
+      // fontWeight: 500,
+      fontSize: ".7rem",
     },
   },
   palette: {
-    primary: red,
-    secondary: red,
+    primary: tangaroa,
+    secondary: carissma,
+    info: emerald,
   },
+
   overrides: {
-    MuiButton: {
-      sizeLarge: {
-        padding: "1.5rem 5rem",
-        fontSize: "1.2rem",
-      },
-      containedSecondary: {
-        color: "#fff",
-        fontWeight: 400,
-        backgroundColor: red[500],
-        "&:hover": {
-          backgroundColor: red["700"],
-        },
-      },
-      outlinedSecondary: {
-        color: red[500],
-        fontWeight: 400,
-        borderColor: red[500],
-        "&:hover": {
-          backgroundColor: red["700"],
-          color: "#fff",
-        },
-      },
-    },
     MuiFab: {
       secondary: {
         color: "#fff",
         fontWeight: 400,
-        backgroundColor: red[500],
+        backgroundColor: carissma[500],
         "&:hover": {
-          backgroundColor: red["700"],
+          backgroundColor: carissma["700"],
         },
+      },
+    },
+    MuiAppBar: {
+      positionStatic: {
+        height: "3rem",
+      },
+    },
+    MuiTab: {
+      textColorSecondary: {
+        color: emerald[700],
+      },
+    },
+    MuiTabs: {
+      root: {
+        backgroundColor: emerald["50"],
+        color: emerald["500"],
+        height: "3rem",
+      },
+      indicator: {
+        color: "white",
+        width: "100% !important",
+        left: "0 !important",
+        height: "1px",
+      },
+      flexContainer: {
+        height: "3rem",
+      },
+    },
+    MuiPaper: {
+      elevation4: {
+        boxShadow: "none",
       },
     },
   },

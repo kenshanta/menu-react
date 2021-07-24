@@ -1,40 +1,30 @@
-import React, { Suspense, useEffect } from "react";
-import {
-  RouteComponentProps,
-  Switch,
-  Route,
-  withRouter,
-  Redirect,
-} from "react-router-dom";
+import React, { Suspense } from "react";
+import { Switch, Route, withRouter, Redirect } from "react-router-dom";
 import { HeaderBar } from "../components/headerBar";
+import { FooterBar } from "../components/footerBar";
+// import { FooterBar } from "../components/footerBar";
 import { Menu } from "./menu";
-// import { API } from 'services/api';
-// import 'url-search-params-polyfill';
-
 // import module styles
 import "./module.scss";
-
-interface Props extends RouteComponentProps {}
+import { Box } from "@material-ui/core";
 
 /**
  * Modules Entry Routes
  */
-const Routes: React.FC<Props> = () => {
-  // if token is present, set the auth header globally
-  useEffect(() => {
-    // API.defaults.headers.common['Authorization'] = `Bearer ${token}`;
-  }, []);
-
+const Routes: React.FC = () => {
   return (
-    <Suspense fallback={"Loading"}>
-      <HeaderBar />
-      <Switch>
-        <Route exact path="/">
-          <Menu />
-        </Route>
-        <Redirect to="/" />
-      </Switch>
-    </Suspense>
+    <Box id="page-container">
+      <Suspense fallback={"Loading"}>
+        <HeaderBar />
+        <Switch>
+          <Route exact path="/">
+            <Menu />
+          </Route>
+          <Redirect to="/" />
+        </Switch>
+        <FooterBar />
+      </Suspense>
+    </Box>
   );
 };
 export default withRouter(Routes);

@@ -10,21 +10,37 @@
   font-family: "Audrey";
   font-display: auto;
   font-style: normal;
-  font-weight: 700;
-  src: url("./assets/fonts/audrey/Audrey-Bold.otf");
+  font-weight: 500;
+  src: url("./assets/fonts/audrey/Audrey-Medium.otf");
 }
 @font-face {
   font-family: "Audrey";
   font-display: auto;
   font-style: normal;
-  font-weight: 500;
-  src: url("./assets/fonts/audrey/Audrey-Medium.otf");
+  font-weight: 700;
+  src: url("./assets/fonts/audrey/Audrey-Bold.otf");
 }
 @font-face {
-  font-family: "Yesava";
+  font-family: "Yeseva";
   font-display: auto;
   font-style: normal;
   font-weight: 500;
   src: url("./assets/fonts/yeseva/YesevaOne-Regular.ttf");
 }
 /*  =============== adding fonts =============== */
+
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#content-wrap {
+  padding-bottom: 2.5rem; /* Footer height */
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem; /* Footer height */
+}
