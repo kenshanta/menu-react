@@ -5,14 +5,15 @@ import Footer from "../../assets/images/pattern.svg";
 
 const FooterBar: React.FC = () => {
   return (
-    <Box id="footer">
+    <Box>
       <img
         src={Footer}
         style={{
-          position: "absolute",
+          position: "inherit",
           bottom: 0,
           width: "100%",
-          height: "auto",
+          // display: "block",
+          // maxHeight: "17vh",
         }}
         alt="website footer"
       />

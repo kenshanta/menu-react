@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "flex-start",
     paddingTop: theme.spacing(3),
     paddingBottom: theme.spacing(2),
-    marginLeft: "2.5rem",
+    marginLeft: "2rem",
   },
   title: {
     flexGrow: 1,
@@ -46,14 +46,15 @@ const HeaderBar: React.FC = observer(() => {
     <Grid container direction="row" className={classes.root}>
       <AppBar position="sticky">
         <Toolbar className={classes.toolbar}>
-          <Grid container item xs={12} justify="center">
+          <Grid container item xs={12} justifyContent="center">
             {localeLanguage === "en" ? <LogoEnglish /> : <LogoArmenian />}
           </Grid>
-          <Grid direction="row" item justify="flex-end">
+          <Grid item xs justifyContent="flex-end" container>
             <IconButton
               aria-label="language"
               color="inherit"
               onClick={handleOnClick}
+              style={{ paddingRight: 0 }}
             >
               {localeLanguage === "en" ? <UkIcon /> : <AmIcono />}
             </IconButton>

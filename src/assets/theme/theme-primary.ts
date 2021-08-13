@@ -1,24 +1,26 @@
-import { createMuiTheme, responsiveFontSizes } from "@material-ui/core";
+import { createTheme, responsiveFontSizes } from "@material-ui/core";
 import { carissma, tangaroa, emerald } from "../colors";
 
-let theme = createMuiTheme({
+let theme = createTheme({
   typography: {
     h3: {
-      fontSize: "2.5rem",
+      fontFamily: "AudreyM",
+      fontSize: "1.7rem",
+      color: emerald[700],
+      fontWeight: "bold",
     },
     h4: {
-      fontSize: "2rem",
+      fontFamily: "AudreyM",
+      fontSize: "0.7rem",
+      fontWeight: 100,
     },
     h5: {
-      fontFamily: "Audrey",
-      fontSize: "1.5rem",
-      fontWeight: 700,
-      color: emerald[700],
+      fontFamily: "AudreyM",
+      fontSize: ".7rem",
     },
     h6: {
-      fontFamily: " Audrey",
-      // fontWeight: 500,
-      fontSize: ".7rem",
+      fontFamily: " AudreyM",
+      fontSize: ".4rem",
     },
   },
   palette: {
@@ -40,28 +42,40 @@ let theme = createMuiTheme({
     },
     MuiAppBar: {
       positionStatic: {
-        height: "3rem",
+        // height: "2rem",
       },
     },
     MuiTab: {
       textColorSecondary: {
         color: emerald[700],
+        fontWeight: 900,
+        textTransform: "none",
+        fontFamily: "Yeseva",
+      },
+      wrapper: {
+        margin: "0 .3rem 0",
+        height: "100%",
+        padding: "5px 0 15px",
+        fontWeight: 100,
       },
     },
     MuiTabs: {
       root: {
         backgroundColor: emerald["50"],
         color: emerald["500"],
-        height: "3rem",
+        height: "2.5rem",
+        fontWeight: 800,
+        minHeight: "20px",
+        // marginBottom: "10px",
       },
       indicator: {
-        color: "white",
+        backgroundColor: emerald[500],
         width: "100% !important",
         left: "0 !important",
         height: "1px",
       },
       flexContainer: {
-        height: "3rem",
+        height: "2.5rem",
       },
     },
     MuiPaper: {

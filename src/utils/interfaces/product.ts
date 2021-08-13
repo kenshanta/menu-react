@@ -4,7 +4,8 @@ export interface IProduct {
   created_at: string;
   description?: string;
   category: ICategory;
-  prices: IPrices;
+  unit_price: number;
+  lot_price: number;
   published_at: string;
   sub_category: number;
   updated_at: string;

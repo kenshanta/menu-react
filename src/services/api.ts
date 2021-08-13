@@ -1,8 +1,8 @@
 import axios from "axios";
 
 export const API = axios.create({
-  baseURL: "http://localhost:1337/",
+  baseURL: "https://churchills-taylor.herokuapp.com/",
   headers: { "Content-Type": "application/json" },
-  timeout: 1000,
+  timeout: 5000,
   withCredentials: false,
 });

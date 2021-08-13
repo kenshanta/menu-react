@@ -2,19 +2,57 @@ import React, { Suspense } from "react";
 import { Switch, Route, withRouter, Redirect } from "react-router-dom";
 import { HeaderBar } from "../components/headerBar";
 import { FooterBar } from "../components/footerBar";
-// import { FooterBar } from "../components/footerBar";
+
+import { useMenuStore } from "../stores/menuStore";
+import { MenuService } from "../services";
 import { Menu } from "./menu";
-// import module styles
+
 import "./module.scss";
-import { Box } from "@material-ui/core";
+import { PanelSkeleton } from "../components/panelBody";
+import { toJS } from "mobx";
 
 /**
  * Modules Entry Routes
  */
 const Routes: React.FC = () => {
+  const {
+    localeLanguage,
+    setIsLoading,
+    setLocaleLanguage,
+    setLocaleCategoriesList,
+    setLocaleSubCategories,
+    localeCategoriesList,
+  } = useMenuStore();
+
+  React.useEffect(() => {
+    const fetchCategoriesList = async () => {
+      const productItemsList = await MenuService.getCategoriesByLocale(
+        localeLanguage
+      );
+      setLocaleCategoriesList(toJS(productItemsList));
+    };
+    const fetchSubCategoriesList = async () => {
+      const subCategoriesList = await MenuService.getSubCategoriesByLocale(
+        localeLanguage
+      );
+      setLocaleSubCategories(toJS(subCategoriesList));
+      setIsLoading(false);
+      setLocaleLanguage(localeLanguage);
+    };
+    fetchCategoriesList();
+    fetchSubCategoriesList();
+  }, [
+    localeLanguage,
+    setLocaleCategoriesList,
+    setLocaleLanguage,
+    setIsLoading,
+    setLocaleSubCategories,
+    localeCategoriesList,
+  ]);
+
   return (
-    <Box id="page-container">
-      <Suspense fallback={"Loading"}>
+    <>
+      <Suspense fallback={<PanelSkeleton />}>
         <HeaderBar />
         <Switch>
           <Route exact path="/">
@@ -24,7 +62,7 @@ const Routes: React.FC = () => {
         </Switch>
         <FooterBar />
       </Suspense>
-    </Box>
+    </>
   );
 };
 export default withRouter(Routes);
