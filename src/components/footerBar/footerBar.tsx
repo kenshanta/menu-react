@@ -12,8 +12,6 @@ const FooterBar: React.FC = () => {
           position: "inherit",
           bottom: 0,
           width: "100%",
-          // display: "block",
-          // maxHeight: "17vh",
         }}
         alt="website footer"
       />

@@ -9,13 +9,13 @@ interface Props {
   products: any;
 }
 
-const ZGrid = styled(Grid)`
+const ProductGrid = styled(Grid)`
   margin-bottom: 1.5rem;
 `;
-const SGrid = styled(Grid)`
+const ItemGrid = styled(Grid)`
   margin-bottom: 5px;
 `;
-const ZTypography = styled(Typography)`
+const SubCategoyTypography = styled(Typography)`
   margin: 0.7rem 0 1rem;
 `;
 const PanelBody: React.FC<Props> = ({ products, indexValue }) => {
@@ -32,16 +32,16 @@ const PanelBody: React.FC<Props> = ({ products, indexValue }) => {
               (product) => product.sub_category === subCategory.id
             );
             return (
-              <ZGrid container key={indexz}>
-                <ZTypography variant="h3">
+              <ProductGrid container key={indexz}>
+                <SubCategoyTypography variant="h3">
                   {capitalize(subCategory.name)}
-                </ZTypography>
+                </SubCategoyTypography>
                 {productsList.map((item, i) => (
-                  <SGrid container direction="row" key={i}>
+                  <ItemGrid container direction="row" key={i}>
                     <PrimaryGridRow itemData={item} indexKey={i} />
-                  </SGrid>
+                  </ItemGrid>
                 ))}
-              </ZGrid>
+              </ProductGrid>
             );
           }
         )}

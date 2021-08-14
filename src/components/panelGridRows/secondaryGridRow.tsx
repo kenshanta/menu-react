@@ -7,14 +7,14 @@ interface Props {
   indexKey: number;
 }
 
-const SButton = styled(Box)`
+const Hexagon = styled(Box)`
   width: 0.3rem;
   height: 0.3rem;
   background-color: #c47c5a;
   transform: rotate(45deg);
   margin-bottom: 5px;
 `;
-const CGrid = styled(Grid)`
+const ItemNameGrid = styled(Grid)`
   flex: 0 -1 2rem;
 `;
 const STypography = styled(Typography)`
@@ -25,9 +25,9 @@ const STypography = styled(Typography)`
 const SecondaryGridRow: React.FC<Props> = ({ itemData = {}, indexKey = 0 }) => {
   return (
     <Grid container key={indexKey}>
-      <CGrid container item xs={9} alignContent="center">
+      <ItemNameGrid container item xs={9} alignContent="center">
         <Typography variant="h4">{itemData.name.toUpperCase()}</Typography>
-      </CGrid>
+      </ItemNameGrid>
 
       <Grid container item xs direction="row" justifyContent="flex-end">
         <Grid
@@ -38,7 +38,7 @@ const SecondaryGridRow: React.FC<Props> = ({ itemData = {}, indexKey = 0 }) => {
           alignContent="center"
           justifyContent="flex-start"
         >
-          <SButton />
+          <Hexagon />
         </Grid>
         {itemData.lot_price && (
           <Grid

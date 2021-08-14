@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Tabs, Tab, AppBar } from "@material-ui/core";
 import { useMenuStore } from "../../stores/menuStore";
-import { CategoryMapper } from "../../utils/maps/categoryMapper";
+
 const NavBar: React.FC = () => {
   const {
     localeCategoriesList,
