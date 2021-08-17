@@ -7,14 +7,14 @@ interface Props {
   indexKey: number;
 }
 
-const SButton = styled(Box)`
+const Hexagon = styled(Box)`
   width: 0.3rem;
   height: 0.3rem;
   background-color: #c47c5a;
   transform: rotate(45deg);
   margin-bottom: 5px;
 `;
-const CGrid = styled(Grid)`
+const ItemGrid = styled(Grid)`
   flex: 0 -1 2rem;
 `;
 const STypography = styled(Typography)`
@@ -26,9 +26,9 @@ const PrimaryGridRow: React.FC<Props> = ({ itemData = {}, indexKey = 0 }) => {
   return (
     <>
       <Grid container key={indexKey}>
-        <CGrid container item xs={9} alignContent="center">
+        <ItemGrid container item xs={9} alignContent="center">
           <Typography variant="h4">{itemData.name.toUpperCase()}</Typography>
-        </CGrid>
+        </ItemGrid>
 
         <Grid container item xs direction="row" justifyContent="flex-end">
           <Grid
@@ -39,7 +39,7 @@ const PrimaryGridRow: React.FC<Props> = ({ itemData = {}, indexKey = 0 }) => {
             alignContent="center"
             justifyContent="flex-start"
           >
-            <SButton />
+            <Hexagon />
           </Grid>
           {itemData.lot_price && itemData.description ? (
             <>
@@ -51,7 +51,7 @@ const PrimaryGridRow: React.FC<Props> = ({ itemData = {}, indexKey = 0 }) => {
                 item
                 xs={4}
               >
-                <STypography variant="h6">{"BOTTLE"}</STypography>
+                <STypography variant="h6">{t("BOTTLE")}</STypography>
               </Grid>
               <Grid container item xs={6} justifyContent="flex-end">
                 <Typography variant="h5">{itemData.lot_price}</Typography>
@@ -66,11 +66,11 @@ const PrimaryGridRow: React.FC<Props> = ({ itemData = {}, indexKey = 0 }) => {
       </Grid>
       {itemData.description && (
         <Grid container item xs direction="row" justifyContent="flex-start">
-          <CGrid item xs={9}>
+          <ItemGrid item xs={9}>
             <Typography variant="h6">
               {itemData.description ? itemData.description.toUpperCase() : ""}
             </Typography>
-          </CGrid>
+          </ItemGrid>
           {itemData.lot_price ? (
             <Grid
               container
@@ -81,7 +81,7 @@ const PrimaryGridRow: React.FC<Props> = ({ itemData = {}, indexKey = 0 }) => {
               alignContent="center"
             >
               <Grid container alignContent="center" item xs={1}>
-                <SButton />
+                <Hexagon />
               </Grid>
               <Grid item xs={4} container alignContent="center">
                 <STypography variant="h6">50ML</STypography>
