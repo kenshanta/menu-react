@@ -21,7 +21,6 @@ const MenuBody: React.FC = observer(() => {
   const handleChangeIndex = (index: number) => {
     setSelectedCategoryId(index);
   };
-  console.log(localeCategoriesList, "important");
   return (
     <CGrid>
       <NavBar />

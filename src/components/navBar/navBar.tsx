@@ -17,7 +17,6 @@ const NavBar: React.FC = () => {
   ) => {
     setSelectedCategoryId(newValue);
   };
-  console.log(selectedCategoryId, "localecategories");
   return (
     <AppBar position="static" color="default">
       <Tabs

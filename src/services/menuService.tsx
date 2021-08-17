@@ -23,24 +23,6 @@ export class MenuService {
     const response = await API.request<any>(config);
     return response.data;
   }
-  /**
-   * Get Order details
-   *
-   * @async
-   * @function getCategoriesByLanguange
-   *
-   * @return {array} CategoriesList
-   */
-  async getCategoriesByLanguange(locale: string = "en") {
-    //request config
-    const config: AxiosRequestConfig = {
-      method: "GET",
-      url: `/categories?_locale=${locale}`,
-    };
-
-    const response = await API.request<any>(config);
-    return response.data;
-  }
 
   async getSubCategoriesByLocale(locale: string = "en") {
     const config: AxiosRequestConfig = {
