@@ -6,7 +6,7 @@ import { observer } from "mobx-react-lite";
 
 import { ReactComponent as LogoEnglish } from "../../assets/images/logo_en.svg";
 import { ReactComponent as UkIcon } from "../../assets/images/flag_uk.svg";
-import { ReactComponent as AmIcono } from "../../assets/images/flag_am.svg";
+import { ReactComponent as AmIcon } from "../../assets/images/flag_am.svg";
 import { ReactComponent as LogoArmenian } from "../../assets/images/logo_am.svg";
 
 const useStyles = makeStyles((theme) => ({
@@ -56,7 +56,7 @@ const HeaderBar: React.FC = observer(() => {
               onClick={handleOnClick}
               style={{ paddingRight: 0 }}
             >
-              {localeLanguage === "en" ? <UkIcon /> : <AmIcono />}
+              {localeLanguage === "en" ? <UkIcon /> : <AmIcon />}
             </IconButton>
           </Grid>
         </Toolbar>

@@ -51,7 +51,7 @@ const PrimaryGridRow: React.FC<Props> = ({ itemData = {}, indexKey = 0 }) => {
                 item
                 xs={4}
               >
-                <STypography variant="h6">{t("BOTTLE")}</STypography>
+                <STypography variant="h6">{"BOTTLE"}</STypography>
               </Grid>
               <Grid container item xs={6} justifyContent="flex-end">
                 <Typography variant="h5">{itemData.lot_price}</Typography>

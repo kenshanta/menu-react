@@ -10,7 +10,9 @@ import { toJS } from "mobx";
 import { TabPanel } from "../../../components/tabPanel";
 import styled from "styled-components";
 
-const CGrid = styled(Box)``;
+const CGrid = styled(Box)`
+  min-height: 90vh;
+`;
 
 const MenuBody: React.FC = observer(() => {
   const theme = useTheme();

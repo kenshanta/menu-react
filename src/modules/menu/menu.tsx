@@ -16,19 +16,13 @@ interface Props extends RouteComponentProps {}
 const MenuBody = React.lazy(() => import("./components/menuBody"));
 
 const Menu: React.FC<Props> = observer(({ match: { path } }) => {
-  const { loading, localeCategoriesList } = useMenuStore();
-
   return (
-    <>
-      <Suspense fallback={<PanelSkeleton />}>
-        <Switch>
-          {!loading && localeCategoriesList && (
-            <Route path={`${path}`} children={<MenuBody />} />
-          )}
-          <Redirect to={`${path}`} />
-        </Switch>
-      </Suspense>
-    </>
+    <Suspense fallback={<PanelSkeleton />}>
+      <Switch>
+        <Route path={`${path}`} children={<MenuBody />} />
+        <Redirect to={`${path}`} />
+      </Switch>
+    </Suspense>
   );
 });
 

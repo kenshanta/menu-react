@@ -1,10 +1,10 @@
 import React from "react";
 import { Skeleton } from "@material-ui/lab";
 
-const MenuSkeleton: React.FC = () => {
+const PanelSkeleton: React.FC = () => {
   return (
-    <div>
-      <Skeleton variant="rect" width={"99%"} height={55} />
+    <div style={{ height: "100%" }}>
+      <Skeleton variant="rect" width={"100%"} height={55} />
       <Skeleton
         variant="text"
         height={60}
@@ -41,7 +41,45 @@ const MenuSkeleton: React.FC = () => {
         width={"85%"}
         style={{ marginLeft: "1.2rem" }}
       />
+      <Skeleton
+        variant="text"
+        height={60}
+        width={"85%"}
+        style={{ marginLeft: "1.2rem" }}
+      />
+      <Skeleton
+        variant="text"
+        height={60}
+        width={"85%"}
+        style={{ marginLeft: "1.2rem" }}
+      />
+      <Skeleton
+        variant="text"
+        height={60}
+        width={"85%"}
+        style={{ marginLeft: "1.2rem" }}
+      />
+      <Skeleton
+        variant="text"
+        height={60}
+        width={"85%"}
+        style={{ marginLeft: "1.2rem" }}
+      />
+      <div>
+        <Skeleton
+          variant="text"
+          height={60}
+          width={"85%"}
+          style={{ marginLeft: "1.2rem" }}
+        />
+        <Skeleton
+          variant="text"
+          height={60}
+          width={"85%"}
+          style={{ marginLeft: "1.2rem" }}
+        />
+      </div>
     </div>
   );
 };
-export default MenuSkeleton;
+export default PanelSkeleton;
