@@ -3,13 +3,10 @@ import { ICategory, IProduct, ISubCategory } from "../utils/interfaces";
 import { createContext, useContext } from "react";
 import { MenuService } from "../services";
 export class MenuStore {
-  //   @observable userLocale: Locales = Locales.English; // an employee can select his preffered locale
   @observable errorMessage = "";
-  @observable loading = true;
   @observable productsList: IProduct[] | null = [];
   @observable localeLanguage: string = "en";
   @observable localeCategories: any = [];
-  @observable localeProducts: any = [];
   @observable localeCategoriesList: ICategory[] = [];
   @observable localeSubCategories: ISubCategory[] = [];
   @observable selectedCategoryId: number = 0;
@@ -20,16 +17,6 @@ export class MenuStore {
   @action
   setLocaleSubCategories = (subCatgories: any) => {
     this.localeSubCategories = subCatgories;
-  };
-
-  @action
-  setLocaleCategories = (categories: any) => {
-    this.localeCategories = categories;
-  };
-
-  @action
-  setLocaleProducts = (products: any) => {
-    this.localeProducts = products;
   };
 
   @action
@@ -46,10 +33,6 @@ export class MenuStore {
   @action
   setSelectedCategoryId = (categoryId: number) => {
     this.selectedCategoryId = categoryId;
-  };
-  @action
-  setIsLoading = (isLoading: boolean) => {
-    this.loading = isLoading;
   };
 }
 export const menuStore = new MenuStore();
