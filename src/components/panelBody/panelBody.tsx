@@ -10,7 +10,7 @@ interface Props {
 }
 
 const ProductGrid = styled(Grid)`
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 `;
 const ItemGrid = styled(Grid)`
   margin-bottom: 5px;

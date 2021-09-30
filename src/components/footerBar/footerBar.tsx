@@ -5,7 +5,6 @@ import Footer from "../../assets/images/pattern.svg";
 
 const FooterBar: React.FC = () => {
   return (
-    // <Box>
     <img
       src={Footer}
       style={{
@@ -15,7 +14,6 @@ const FooterBar: React.FC = () => {
       }}
       alt="website footer"
     />
-    // </Box>
   );
 };
 export default FooterBar;

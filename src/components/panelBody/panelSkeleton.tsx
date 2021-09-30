@@ -9,7 +9,7 @@ const PanelSkeleton: React.FC = () => {
         variant="text"
         height={60}
         width={"85%"}
-        style={{ marginLeft: "1.2rem" }}
+        style={{ margin: "1rem 0 0 1.2rem" }}
       />
       <Skeleton
         variant="text"
@@ -45,7 +45,7 @@ const PanelSkeleton: React.FC = () => {
         variant="text"
         height={60}
         width={"85%"}
-        style={{ marginLeft: "1.2rem" }}
+        style={{ marginLeft: " 1.2rem" }}
       />
       <Skeleton
         variant="text"
@@ -57,26 +57,26 @@ const PanelSkeleton: React.FC = () => {
         variant="text"
         height={60}
         width={"85%"}
-        style={{ marginLeft: "1.2rem" }}
+        style={{ margin: "0 0 0 1.2rem" }}
       />
       <Skeleton
         variant="text"
         height={60}
         width={"85%"}
-        style={{ marginLeft: "1.2rem" }}
+        style={{ margin: "1rem 0 1rem 1.2rem" }}
       />
       <div>
         <Skeleton
           variant="text"
           height={60}
           width={"85%"}
-          style={{ marginLeft: "1.2rem" }}
+          style={{ margin: "1rem 0 1rem 1.2rem" }}
         />
         <Skeleton
           variant="text"
           height={60}
           width={"85%"}
-          style={{ marginLeft: "1.2rem" }}
+          style={{ margin: "1rem 0 1rem 1.2rem" }}
         />
       </div>
     </div>
