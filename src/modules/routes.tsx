@@ -16,7 +16,7 @@ import { toJS } from "mobx";
  */
 const Routes: React.FC = () => {
   return (
-    <Suspense fallback={<PanelSkeleton />}>
+    <>
       <HeaderBar />
       <Switch>
         <Route path="/menu">
@@ -25,7 +25,7 @@ const Routes: React.FC = () => {
         <Redirect to="/menu" />
       </Switch>
       <FooterBar />
-    </Suspense>
+    </>
   );
 };
 export default withRouter(Routes);
