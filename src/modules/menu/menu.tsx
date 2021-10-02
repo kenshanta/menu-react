@@ -6,7 +6,6 @@ import {
   Route,
   RouteComponentProps,
 } from "react-router-dom";
-import { useMenuStore } from "../../stores/menuStore";
 import { observer } from "mobx-react-lite";
 import PanelSkeleton from "../../components/panelBody/panelSkeleton";
 
