@@ -27,7 +27,7 @@ export interface ISubCategory {
   name: string;
   published_at: string;
   updated_at: string;
-  category: number; //categoryId
+  category: number;
   products: IProduct[];
 }
 

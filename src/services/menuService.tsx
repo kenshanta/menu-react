@@ -6,7 +6,7 @@ import { AxiosRequestConfig } from "axios";
  */
 export class MenuService {
   /**
-   * Get Order details
+   * Get Categories details
    *
    * @async
    * @function getMenuProductsByCategoryAndi18

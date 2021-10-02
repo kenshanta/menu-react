@@ -11,7 +11,6 @@ import PanelSkeleton from "../../components/panelBody/panelSkeleton";
 
 interface Props extends RouteComponentProps {}
 
-// lazy import stations
 const MenuBody = React.lazy(() => import("./components/menuBody"));
 
 const Menu: React.FC<Props> = observer(({ match: { path } }) => {
