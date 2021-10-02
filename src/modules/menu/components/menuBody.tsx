@@ -11,7 +11,7 @@ import { TabPanel } from "../../../components/tabPanel";
 import styled from "styled-components";
 
 const CGrid = styled(Box)`
-  min-height: 80vh;
+  min-height: 99vh;
 `;
 
 const MenuBody: React.FC = observer(() => {

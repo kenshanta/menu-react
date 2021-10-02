@@ -6,7 +6,6 @@ import { ThemeProvider } from "@material-ui/styles";
 import { useMenuStore } from "./stores/menuStore";
 import { MenuService } from "./services";
 import { toJS } from "mobx";
-import MenuSkeleton from "./components/panelBody/panelSkeleton";
 import { PanelSkeleton } from "./components/panelBody";
 
 const App: React.FC = () => {

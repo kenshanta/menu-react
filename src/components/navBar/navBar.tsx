@@ -1,15 +1,11 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Tabs, Tab, AppBar } from "@material-ui/core";
 import { useMenuStore } from "../../stores/menuStore";
 import { PanelSkeleton } from "../panelBody";
 
 const NavBar: React.FC = () => {
-  const {
-    localeCategoriesList,
-    setSelectedCategoryId,
-    selectedCategoryId,
-    localeLanguage,
-  } = useMenuStore();
+  const { localeCategoriesList, setSelectedCategoryId, selectedCategoryId } =
+    useMenuStore();
 
   const handleChange = async (
     event: React.ChangeEvent<{}>,
