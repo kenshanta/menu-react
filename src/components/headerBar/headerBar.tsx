@@ -56,7 +56,7 @@ const HeaderBar: React.FC = observer(() => {
               onClick={handleOnClick}
               style={{ paddingRight: 0 }}
             >
-              {localeLanguage === "en" ? <UkIcon /> : <AmIcon />}
+              {localeLanguage === "en" ? <AmIcon /> : <UkIcon />}
             </IconButton>
           </Grid>
         </Toolbar>

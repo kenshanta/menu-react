@@ -19,14 +19,14 @@ const SubCategoyTypography = styled(Typography)`
   margin: 0.7rem 0 1rem;
 `;
 const PanelBody: React.FC<Props> = ({ products, indexValue }) => {
-  const { localeCategoriesList } = useMenuStore();
+  const { currentCategoriesList } = useMenuStore();
 
   return (
     <Box>
       <Grid container direction="row">
-        {localeCategoriesList[indexValue].sub_categories.map(
+        {currentCategoriesList[indexValue].sub_categories.map(
           (subCategory, indexz) => {
-            const productsList = localeCategoriesList[
+            const productsList = currentCategoriesList[
               indexValue
             ].products.filter(
               (product) => product.sub_category === subCategory.id

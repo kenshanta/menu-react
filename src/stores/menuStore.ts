@@ -1,7 +1,6 @@
 import { observable, action, makeObservable, toJS } from "mobx";
 import { ICategory, IProduct, ISubCategory } from "../utils/interfaces";
 import { createContext, useContext } from "react";
-import { MenuService } from "../services";
 export class MenuStore {
   @observable errorMessage = "";
   @observable productsList: IProduct[] | null = [];
@@ -10,6 +9,7 @@ export class MenuStore {
   @observable localeCategoriesList: ICategory[] = [];
   @observable localeSubCategories: ISubCategory[] = [];
   @observable selectedCategoryId: number = 0;
+  @observable currentCategoriesList: any = [];
 
   constructor() {
     makeObservable(this);
@@ -18,21 +18,40 @@ export class MenuStore {
   setLocaleSubCategories = (subCatgories: any) => {
     this.localeSubCategories = subCatgories;
   };
+  @action
+  setCurrentCategoriesList = (categoriesList: any) => {
+    this.currentCategoriesList = toJS(categoriesList);
+  };
 
   @action
   setLocaleCategoriesList = (categoriesList: any) => {
-    this.localeCategoriesList = toJS(categoriesList);
+    this.localeCategoriesList = categoriesList;
+  };
+
+  @action
+  setSelectedCategoryId = (categoryId: number) => {
+    this.selectedCategoryId = categoryId;
+  };
+
+  @action
+  updateCurrentCategoriesListByLocale = (language: string) => {
+    let arr: string[] = [];
+
+    this.localeCategoriesList.map((category: any) => {
+      if (language === "en" && category.locale === "en") {
+        arr.push(category);
+      } else if (language === "hy-AM" && category.locale === "hy-AM") {
+        arr.push(category);
+      }
+      return arr;
+    });
+    this.setCurrentCategoriesList(arr);
   };
 
   @action
   setLocaleLanguage = async (language: string) => {
-    const sakosShit = await MenuService.getCategoriesByLocale(language);
-    this.setLocaleCategoriesList(toJS(sakosShit));
+    this.updateCurrentCategoriesListByLocale(language);
     this.localeLanguage = language;
-  };
-  @action
-  setSelectedCategoryId = (categoryId: number) => {
-    this.selectedCategoryId = categoryId;
   };
 }
 export const menuStore = new MenuStore();

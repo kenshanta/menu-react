@@ -17,7 +17,7 @@ const CGrid = styled(Box)`
 const MenuBody: React.FC = observer(() => {
   const theme = useTheme();
 
-  const { localeCategoriesList, selectedCategoryId, setSelectedCategoryId } =
+  const { currentCategoriesList, selectedCategoryId, setSelectedCategoryId } =
     useMenuStore();
 
   const handleChangeIndex = (index: number) => {
@@ -30,8 +30,9 @@ const MenuBody: React.FC = observer(() => {
         axis={theme.direction === "rtl" ? "x-reverse" : "x"}
         index={selectedCategoryId}
         onChangeIndex={handleChangeIndex}
+        animateHeight
       >
-        {localeCategoriesList.map((category, i) => {
+        {currentCategoriesList.map((category, i) => {
           return (
             <TabPanel
               value={selectedCategoryId}
@@ -41,7 +42,7 @@ const MenuBody: React.FC = observer(() => {
             >
               <PanelBody
                 indexValue={i}
-                products={toJS(localeCategoriesList[category.id])}
+                products={toJS(currentCategoriesList[category.id])}
               />
             </TabPanel>
           );
