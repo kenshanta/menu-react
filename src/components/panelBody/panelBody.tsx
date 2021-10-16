@@ -25,18 +25,21 @@ const PanelBody: React.FC<Props> = ({ products, indexValue }) => {
     <Box>
       <Grid container direction="row">
         {currentCategoriesList[indexValue].sub_categories.map(
-          (subCategory, indexz) => {
+          (subCategory, index) => {
             const productsList = currentCategoriesList[
               indexValue
             ].products.filter(
               (product) => product.sub_category === subCategory.id
             );
+            const alphabeticallySortedList = productsList.sort((a, b) =>
+              a.name.localeCompare(b.name)
+            );
             return (
-              <ProductGrid container key={indexz}>
+              <ProductGrid container key={index}>
                 <SubCategoyTypography variant="h3">
                   {capitalize(subCategory.name)}
                 </SubCategoyTypography>
-                {productsList.map((item, i) => (
+                {alphabeticallySortedList.map((item, i) => (
                   <ItemGrid container direction="row" key={i}>
                     <PrimaryGridRow itemData={item} indexKey={i} />
                   </ItemGrid>
