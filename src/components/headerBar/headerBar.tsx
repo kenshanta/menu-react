@@ -49,13 +49,15 @@ const HeaderBar: React.FC = observer(() => {
           <Grid container item xs={12} justifyContent="center">
             {localeLanguage === "en" ? <LogoEnglish /> : <LogoArmenian />}
           </Grid>
-          <Grid item xs justifyContent="flex-end" container>
-            <IconButton
-              aria-label="language"
-              color="inherit"
-              onClick={handleOnClick}
-              style={{ paddingRight: 0 }}
-            >
+          <Grid
+            item
+            xs
+            justifyContent="center"
+            alignContent="center"
+            container
+            onClick={handleOnClick}
+          >
+            <IconButton size="medium" disableRipple style={{ paddingRight: 0 }}>
               {localeLanguage === "en" ? <AmIcon /> : <UkIcon />}
             </IconButton>
           </Grid>

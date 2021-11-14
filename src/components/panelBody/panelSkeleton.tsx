@@ -3,7 +3,7 @@ import { Skeleton } from "@material-ui/lab";
 
 const PanelSkeleton: React.FC = () => {
   return (
-    <div style={{ height: "100%" }}>
+    <div style={{ height: "100%", backgroundColor: "#f9f2ef" }}>
       <Skeleton variant="rect" width={"100%"} height={55} />
       <Skeleton
         variant="text"

@@ -1,7 +1,7 @@
 import React from "react";
 import SwipeableViews from "react-swipeable-views";
 import { useTheme } from "@material-ui/core/styles";
-import { Box } from "@material-ui/core";
+import { Grid } from "@material-ui/core";
 import { useMenuStore } from "../../../stores/menuStore";
 import { PanelBody } from "../../../components/panelBody";
 import { NavBar } from "../../../components/navBar";
@@ -10,8 +10,8 @@ import { toJS } from "mobx";
 import { TabPanel } from "../../../components/tabPanel";
 import styled from "styled-components";
 
-const CGrid = styled(Box)`
-  min-height: 99vh;
+const CGrid = styled(Grid)`
+  height: 100;
 `;
 
 const MenuBody: React.FC = observer(() => {
@@ -30,7 +30,7 @@ const MenuBody: React.FC = observer(() => {
         axis={theme.direction === "rtl" ? "x-reverse" : "x"}
         index={selectedCategoryId}
         onChangeIndex={handleChangeIndex}
-        animateHeight
+        containerStyle={{ height: "100vh", WebkitOverflowScrolling: "touch" }}
       >
         {currentCategoriesList.map((category, i) => {
           return (

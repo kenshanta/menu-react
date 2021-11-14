@@ -20,7 +20,10 @@ export class MenuStore {
   };
   @action
   setCurrentCategoriesList = (categoriesList: any) => {
-    this.currentCategoriesList = toJS(categoriesList);
+    let sortedList = categoriesList.sort(function (a, b) {
+      return a.id - b.id;
+    });
+    this.currentCategoriesList = toJS(sortedList);
   };
 
   @action

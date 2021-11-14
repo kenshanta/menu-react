@@ -24,18 +24,19 @@ const App: React.FC = () => {
       logicalOperator(productItemsList);
     };
     const logicalOperator = (data: any) => {
-      let arr: string[] = [];
-
+      let categoryListArr: any[] = [];
       data.map((category) => {
         if (localeLanguage === "en" && category.locale === "en") {
-          arr.push(category);
+          categoryListArr.push(category);
         } else if (localeLanguage === "hy-AM" && category.locale === "hy-AM") {
-          arr.push(category);
+          categoryListArr.push(category);
         }
-        return arr;
+        return categoryListArr;
       });
-
-      setCurrentCategoriesList(arr);
+      categoryListArr.sort(function (a, b) {
+        return a.id - b.id;
+      });
+      setCurrentCategoriesList(categoryListArr);
     };
     fetchCategoriesList();
   }, [

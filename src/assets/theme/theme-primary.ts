@@ -40,11 +40,7 @@ let theme = createTheme({
         },
       },
     },
-    MuiAppBar: {
-      positionStatic: {
-        // height: "2rem",
-      },
-    },
+
     MuiTab: {
       textColorSecondary: {
         color: emerald[700],
@@ -66,7 +62,6 @@ let theme = createTheme({
         height: "2.5rem",
         fontWeight: 800,
         minHeight: "20px",
-        // marginBottom: "10px",
       },
       indicator: {
         backgroundColor: emerald[500],
