@@ -1,15 +1,11 @@
 /*  =============== adding fonts =============== */
 @font-face {
   font-family: "Audrey";
-  font-display: auto;
-  font-style: normal;
   font-weight: "bold";
   src: url("./assets/fonts/audrey/Audrey-Normal.otf");
 }
 @font-face {
   font-family: "AudreyM";
-  font-display: auto;
-  font-weight: "bold";
   src: url("./assets/fonts/audrey/Audrey-Medium.otf");
 }
 
@@ -21,3 +17,9 @@
   src: url("./assets/fonts/yeseva/YesevaOne-Regular.ttf");
 }
 /*  =============== adding fonts =============== */
+#container {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
