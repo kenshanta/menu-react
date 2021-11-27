@@ -12,7 +12,7 @@ import { ReactComponent as LogoArmenian } from "../../assets/images/logo_am.svg"
 const useStyles = makeStyles((theme) => ({
   root: {
     marginBottom: 1,
-    height: "calc(20%)",
+    // height: "calc(20%)",
   },
   parentDiv: {
     marginRight: theme.spacing(2),
