@@ -12,6 +12,7 @@ import styled from "styled-components";
 
 const CGrid = styled(Grid)`
   height: 100;
+  width: 100;
 `;
 
 const MenuBody: React.FC = observer(() => {
@@ -30,7 +31,7 @@ const MenuBody: React.FC = observer(() => {
         axis={theme.direction === "rtl" ? "x-reverse" : "x"}
         index={selectedCategoryId}
         onChangeIndex={handleChangeIndex}
-        containerStyle={{ height: "100vh", WebkitOverflowScrolling: "touch" }}
+        animateHeight
       >
         {currentCategoriesList.map((category, i) => {
           return (

@@ -50,8 +50,7 @@ let theme = createTheme({
       },
       wrapper: {
         margin: "0 .3rem 0",
-        height: "100%",
-        padding: "5px 0 15px",
+        padding: "0 0 0",
         fontWeight: 100,
       },
     },
@@ -59,18 +58,18 @@ let theme = createTheme({
       root: {
         backgroundColor: emerald["50"],
         color: emerald["500"],
-        height: "2.5rem",
         fontWeight: 800,
-        minHeight: "20px",
+        overflow: "hidden",
+        position: "relative",
+        padding: "0",
       },
       indicator: {
-        backgroundColor: emerald[500],
-        width: "100% !important",
-        left: "0 !important",
-        height: "1px",
+        height: "0px",
       },
       flexContainer: {
-        height: "2.5rem",
+        position: "absolute",
+        width: "100%",
+        height: "50%",
       },
     },
     MuiPaper: {
