@@ -3,19 +3,19 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { Routes } from "./modules";
 import { ThemePrimary } from "./assets/theme";
 import { ThemeProvider } from "@material-ui/styles";
-import { useMenuStore } from "./stores/menuStore";
-import { MenuService } from "./services";
+// import { useMenuStore } from "./stores/menuStore";
+// import { MenuService } from "./services";
 import { PanelSkeleton } from "./components/panelBody";
 
 const App: React.FC = () => {
-  const {
-    localeLanguage,
-    setLocaleLanguage,
-    setLocaleCategoriesList,
-    setLocaleSubCategories,
-    setCurrentCategoriesList,
-    currentCategoriesList,
-  } = useMenuStore();
+  // const {
+  //   localeLanguage,
+  //   setLocaleLanguage,
+  //   setLocaleCategoriesList,
+  //   setLocaleSubCategories,
+  //   setCurrentCategoriesList,
+  //   currentCategoriesList,
+  // } = useMenuStore();
 
   // React.useEffect(() => {
   //   const fetchCategoriesList = async () => {
