@@ -17,36 +17,36 @@ const App: React.FC = () => {
     currentCategoriesList,
   } = useMenuStore();
 
-  React.useEffect(() => {
-    const fetchCategoriesList = async () => {
-      const productItemsList = await MenuService.getCategoriesByLocale("all");
-      setLocaleCategoriesList(productItemsList);
-      logicalOperator(productItemsList);
-    };
-    const logicalOperator = (data: any) => {
-      let categoryListArr: any[] = [];
-      data.map((category) => {
-        if (localeLanguage === "en" && category.locale === "en") {
-          categoryListArr.push(category);
-        } else if (localeLanguage === "hy-AM" && category.locale === "hy-AM") {
-          categoryListArr.push(category);
-        }
-        return categoryListArr;
-      });
-      categoryListArr.sort(function (a, b) {
-        return a.id - b.id;
-      });
-      setCurrentCategoriesList(categoryListArr);
-    };
-    fetchCategoriesList();
-  }, [
-    localeLanguage,
-    setLocaleCategoriesList,
-    setLocaleLanguage,
-    setLocaleSubCategories,
-    setCurrentCategoriesList,
-    currentCategoriesList,
-  ]);
+  // React.useEffect(() => {
+  //   const fetchCategoriesList = async () => {
+  //     const productItemsList = await MenuService.getCategoriesByLocale("all");
+  //     setLocaleCategoriesList(productItemsList);
+  //     logicalOperator(productItemsList);
+  //   };
+  //   const logicalOperator = (data: any) => {
+  //     let categoryListArr: any[] = [];
+  //     data.map((category) => {
+  //       if (localeLanguage === "en" && category.locale === "en") {
+  //         categoryListArr.push(category);
+  //       } else if (localeLanguage === "hy-AM" && category.locale === "hy-AM") {
+  //         categoryListArr.push(category);
+  //       }
+  //       return categoryListArr;
+  //     });
+  //     categoryListArr.sort(function (a, b) {
+  //       return a.id - b.id;
+  //     });
+  //     setCurrentCategoriesList(categoryListArr);
+  //   };
+  //   fetchCategoriesList();
+  // }, [
+  //   localeLanguage,
+  //   setLocaleCategoriesList,
+  //   setLocaleLanguage,
+  //   setLocaleSubCategories,
+  //   setCurrentCategoriesList,
+  //   currentCategoriesList,
+  // ]);
 
   return (
     <Suspense fallback={<PanelSkeleton />}>
