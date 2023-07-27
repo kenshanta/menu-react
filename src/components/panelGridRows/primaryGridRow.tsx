@@ -24,7 +24,7 @@ const STypography = styled(Typography)`
 `;
 const Description = styled(Typography)`
   margin-left: 0.1rem;
-  font-size: 0.44rem;
+  font-size: 0.45rem;
 `;
 const PrimaryGridRow: React.FC<Props> = ({ itemData = {}, indexKey = 0 }) => {
   return (
