@@ -19,6 +19,7 @@ export interface ICategory {
   products: IProduct[];
   updated_at: string;
   sub_categories: ISubCategory[];
+  locale: string;
 }
 
 export interface ISubCategory {

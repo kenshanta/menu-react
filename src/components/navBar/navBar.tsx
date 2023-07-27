@@ -3,14 +3,20 @@ import { Tabs, Tab, AppBar } from "@material-ui/core";
 import { useMenuStore } from "../../stores/menuStore";
 import { PanelSkeleton } from "../panelBody";
 
+interface ComponentVariablesProps {
+  variant: "standard" | "scrollable" | "fullWidth";
+  centered: boolean;
+}
+
 const NavBar: React.FC = () => {
   const { currentCategoriesList, setSelectedCategoryId, selectedCategoryId } =
     useMenuStore();
 
-  const [componentVariables, setComponentVariables] = useState<any>({
-    variant: "",
-    centered: true,
-  });
+  const [componentVariables, setComponentVariables] =
+    useState<ComponentVariablesProps>({
+      variant: "standard",
+      centered: true,
+    });
   const handleChange = async (
     event: React.ChangeEvent<{}>,
     newValue: number
