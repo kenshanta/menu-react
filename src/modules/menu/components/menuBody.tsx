@@ -6,7 +6,6 @@ import { useMenuStore } from "../../../stores/menuStore";
 import { PanelBody } from "../../../components/panelBody";
 import { NavBar } from "../../../components/navBar";
 import { observer } from "mobx-react-lite";
-import { toJS } from "mobx";
 import { TabPanel } from "../../../components/tabPanel";
 import styled from "styled-components";
 
@@ -41,10 +40,7 @@ const MenuBody: React.FC = observer(() => {
               dir={theme.direction}
               key={category.id}
             >
-              <PanelBody
-                indexValue={i}
-                products={toJS(currentCategoriesList[category.id])}
-              />
+              <PanelBody indexValue={i} />
             </TabPanel>
           );
         })}

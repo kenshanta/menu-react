@@ -20,8 +20,12 @@ const ItemGrid = styled(Grid)`
 const STypography = styled(Typography)`
   font-style: italic;
   margin-bottom: 2px;
+  font-size: 0.42rem;
 `;
-
+const Description = styled(Typography)`
+  margin-left: 0.1rem;
+  font-size: 0.44rem;
+`;
 const PrimaryGridRow: React.FC<Props> = ({ itemData = {}, indexKey = 0 }) => {
   return (
     <>
@@ -67,9 +71,9 @@ const PrimaryGridRow: React.FC<Props> = ({ itemData = {}, indexKey = 0 }) => {
       {itemData.description && (
         <Grid container item xs direction="row" justifyContent="flex-start">
           <ItemGrid item xs={9}>
-            <Typography variant="h6">
+            <Description variant="h6">
               {itemData.description ? itemData.description.toUpperCase() : ""}
-            </Typography>
+            </Description>
           </ItemGrid>
           {itemData.lot_price ? (
             <Grid

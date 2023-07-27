@@ -12,6 +12,10 @@ const FooterBar: React.FC = () => {
         width: "100%",
       }}
       alt="website footer"
+      loading="lazy"
+      width='100%'
+      height= "calc(15%)"
+
     />
   );
 };

@@ -6,7 +6,6 @@ import { PrimaryGridRow } from "../panelGridRows";
 
 interface Props {
   indexValue: number;
-  products: any;
 }
 
 const ProductGrid = styled(Grid)`
@@ -18,11 +17,11 @@ const ItemGrid = styled(Grid)`
 const SubCategoyTypography = styled(Typography)`
   margin: 0.7rem 0 1rem;
 `;
-const PanelBody: React.FC<Props> = ({ products, indexValue }) => {
+const PanelBody: React.FC<Props> = ({ indexValue }) => {
   const { currentCategoriesList } = useMenuStore();
 
   return (
-    <Box>
+    <Box minHeight={'70vh'}>
       <Grid container direction="row">
         {currentCategoriesList[indexValue].sub_categories.map(
           (subCategory, index) => {

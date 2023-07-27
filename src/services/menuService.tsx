@@ -1,6 +1,6 @@
 import { API } from "./api";
 import { AxiosRequestConfig } from "axios";
-
+import { ICategory } from "../utils/interfaces";
 /**
  *  Api service used to manage & handle orders
  */
@@ -20,16 +20,7 @@ export class MenuService {
       url: `/categories?_locale=${locale}`,
     };
 
-    const response = await API.request<any>(config);
-    return response.data;
-  }
-
-  async getSubCategoriesByLocale(locale: string = "en") {
-    const config: AxiosRequestConfig = {
-      method: "GET",
-      url: `/sub-categories?_locale=${locale}`,
-    };
-    const response = await API.request<any>(config);
+    const response = await API.request<ICategory>(config);
     return response.data;
   }
 }

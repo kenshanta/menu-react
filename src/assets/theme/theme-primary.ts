@@ -64,7 +64,10 @@ let theme = createTheme({
         padding: "0",
       },
       indicator: {
-        height: "0px",
+        height: "100%",
+        background: "#bda78c",
+        opacity: 0.2,
+        borderRadius: "3%",
       },
       flexContainer: {
         position: "absolute",
