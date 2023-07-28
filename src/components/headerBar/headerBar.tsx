@@ -35,19 +35,32 @@ const HeaderBar: React.FC = observer(() => {
   const classes = useStyles();
   const { setLocaleLanguage, localeLanguage } = useMenuStore();
 
-  const handleOnClick = async () => {
-    if (localeLanguage === "en") {
-      setLocaleLanguage("hy-AM");
-    } else {
-      setLocaleLanguage("en");
-    }
+  const handleOnClick = () => {
+    setLocaleLanguage(localeLanguage === "en" ? "hy-AM" : "en");
   };
+
+  const activeLogo = React.useMemo(() => {
+    if (localeLanguage === "en") {
+      return <LogoEnglish />;
+    } else {
+      return <LogoArmenian />;
+    }
+  }, [localeLanguage]);
+
+  const activeIcon = React.useMemo(() => {
+    if (localeLanguage === "en") {
+      return <UkIcon />;
+    } else {
+      return <AmIcon />;
+    }
+  }, [localeLanguage]);
+
   return (
     <Grid container direction="row" className={classes.root}>
       <AppBar position="sticky">
         <Toolbar className={classes.toolbar}>
           <Grid container item xs={12} justifyContent="center">
-            {localeLanguage === "en" ? <LogoEnglish /> : <LogoArmenian />}
+            {activeLogo}
           </Grid>
           <Grid
             item
@@ -55,10 +68,10 @@ const HeaderBar: React.FC = observer(() => {
             justifyContent="center"
             alignContent="center"
             container
-            onClick={handleOnClick}
+            onClick={() => handleOnClick()}
           >
             <IconButton size="medium" disableRipple style={{ paddingRight: 0 }}>
-              {localeLanguage === "en" ? <AmIcon /> : <UkIcon />}
+              {activeIcon}
             </IconButton>
           </Grid>
         </Toolbar>

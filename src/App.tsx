@@ -8,11 +8,8 @@ import { MenuService } from "./services";
 import { PanelSkeleton } from "./components/panelBody";
 
 const App: React.FC = () => {
-  const {
-    localeLanguage,
-    setLocaleCategoriesList,
-    setCurrentCategoriesList,
-  } = useMenuStore();
+  const { localeLanguage, setLocaleCategoriesList, setCurrentCategoriesList } =
+    useMenuStore();
 
   React.useEffect(() => {
     const fetchCategoriesList = async () => {

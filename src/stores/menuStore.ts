@@ -9,7 +9,7 @@ export class MenuStore {
   @observable localeCategoriesList: ICategory[] = [];
   @observable localeSubCategories: ISubCategory[] = [];
   @observable selectedCategoryId: number = 0;
-  @observable currentCategoriesList: any = [];
+  @observable currentCategoriesList: ICategory[] = [];
 
   constructor() {
     makeObservable(this);
@@ -27,7 +27,7 @@ export class MenuStore {
   };
 
   @action
-  setLocaleCategoriesList = (categoriesList: any) => {
+  setLocaleCategoriesList = (categoriesList: ICategory[]) => {
     this.localeCategoriesList = categoriesList;
   };
 
@@ -38,9 +38,8 @@ export class MenuStore {
 
   @action
   updateCurrentCategoriesListByLocale = (language: string) => {
-    let arr: string[] = [];
-
-    this.localeCategoriesList.map((category: any) => {
+    let arr: ICategory[] = [];
+    this.localeCategoriesList.map((category: ICategory) => {
       if (language === "en" && category.locale === "en") {
         arr.push(category);
       } else if (language === "hy-AM" && category.locale === "hy-AM") {

@@ -20,7 +20,7 @@ export class MenuService {
       url: `/categories?_locale=${locale}`,
     };
 
-    const response = await API.request<ICategory>(config);
+    const response = await API.request<ICategory[]>(config);
     return response.data;
   }
 }

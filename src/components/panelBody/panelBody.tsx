@@ -17,11 +17,12 @@ const ItemGrid = styled(Grid)`
 const SubCategoyTypography = styled(Typography)`
   margin: 0.7rem 0 1rem;
 `;
+
 const PanelBody: React.FC<Props> = ({ indexValue }) => {
   const { currentCategoriesList } = useMenuStore();
 
   return (
-    <Box minHeight={'70vh'}>
+    <Box minHeight={"70vh"}>
       <Grid container direction="row">
         {currentCategoriesList[indexValue].sub_categories.map(
           (subCategory, index) => {
@@ -36,7 +37,7 @@ const PanelBody: React.FC<Props> = ({ indexValue }) => {
             return (
               <ProductGrid container key={index}>
                 <SubCategoyTypography variant="h3">
-                  {capitalize(subCategory.name)}
+                  {subCategory.name.toUpperCase()}
                 </SubCategoyTypography>
                 {alphabeticallySortedList.map((item, i) => (
                   <ItemGrid container direction="row" key={i}>
@@ -52,14 +53,3 @@ const PanelBody: React.FC<Props> = ({ indexValue }) => {
   );
 };
 export default PanelBody;
-
-const capitalize = (string) => {
-  const arr = string.split(" ");
-
-  for (let i = 0; i < arr.length; i++) {
-    arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1);
-  }
-
-  const str2 = arr.join(" ");
-  return str2;
-};

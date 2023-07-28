@@ -23,6 +23,7 @@ const MenuBody: React.FC = observer(() => {
   const handleChangeIndex = (index: number) => {
     setSelectedCategoryId(index);
   };
+
   return (
     <CGrid>
       <NavBar />
