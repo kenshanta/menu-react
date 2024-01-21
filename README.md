@@ -6,9 +6,9 @@ As of now the backend is no longer supported (financially unsopported) Therefore
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-![SCSS Badge](https://img.shields.io/badge/Tailwind%20CSS-06B6D4?logo=tailwindcss&logoColor=fff&style=flat)
+![SCSS Badge](https://img.shields.io/badge/SCSS-06B6D4?logo=scss&logoColor=fff&style=flat)
 ![TypeScript Badge](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=fff&style=flat)
-![HTML Badge](https://img.shields.io/badge/ESLint-4B32C3?logo=eslint&logoColor=fff&style=flat)
+![HTML Badge](https://img.shields.io/badge/HTML-4B32C3?logo=html&logoColor=fff&style=flat)
 ![Prettier Badge](https://img.shields.io/badge/Prettier-F7B93E?logo=prettier&logoColor=fff&style=flat)
 
 ## Available Scripts
