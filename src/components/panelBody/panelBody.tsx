@@ -22,7 +22,7 @@ const PanelBody: React.FC<Props> = ({ indexValue }) => {
   const { currentCategoriesList } = useMenuStore();
 
   return (
-    <Box minHeight={"70vh"}>
+    <Box minHeight={"70vh"} key={indexValue}>
       <Grid container direction="row">
         {currentCategoriesList[indexValue].sub_categories.map(
           (subCategory, index) => {

@@ -1,6 +1,6 @@
 import { API } from "./api";
 import { AxiosRequestConfig } from "axios";
-import { ICategory } from "../utils/interfaces";
+import { mockCategory } from "../stores/mockData";
 /**
  *  Api service used to manage & handle orders
  */
@@ -19,9 +19,9 @@ export class MenuService {
       method: "GET",
       url: `/categories?_locale=${locale}`,
     };
-
-    const response = await API.request<ICategory[]>(config);
-    return response.data;
+    const response = mockCategory;
+    console.log(response, "response");
+    return response;
   }
 }
 
