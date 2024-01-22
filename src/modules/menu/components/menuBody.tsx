@@ -28,6 +28,10 @@ const MenuBody: React.FC = observer(() => {
     <CGrid>
       <NavBar />
       <SwipeableViews
+        // hotfix fix until issue #599 is resolved
+        containerStyle={{
+          transition: "transform 0.35s cubic-bezier(0.15, 0.3, 0.25, 1) 0s",
+        }}
         axis={theme.direction === "rtl" ? "x-reverse" : "x"}
         index={selectedCategoryId}
         onChangeIndex={handleChangeIndex}

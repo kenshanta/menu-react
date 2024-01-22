@@ -47,14 +47,7 @@ const PrimaryGridRow: React.FC<Props> = ({ itemData = {}, indexKey = 0 }) => {
           </Grid>
           {itemData.lot_price && itemData.description ? (
             <>
-              <Grid
-                container
-                direction="row"
-                justifyContent="center"
-                alignContent="flex-end"
-                item
-                xs={4}
-              >
+              <Grid container alignContent="center" item xs={4}>
                 <STypography variant="h6">{"BOTTLE"}</STypography>
               </Grid>
               <Grid container item xs={6} justifyContent="flex-end">
@@ -78,19 +71,24 @@ const PrimaryGridRow: React.FC<Props> = ({ itemData = {}, indexKey = 0 }) => {
           {itemData.lot_price ? (
             <Grid
               container
-              item
               xs={3}
               direction="row"
               justifyContent="space-between"
               alignContent="center"
             >
-              <Grid container alignContent="center" item xs={1}>
+              <Grid
+                item
+                xs={2}
+                direction="row"
+                alignContent="center"
+                justifyContent="flex-start"
+              >
                 <Hexagon />
               </Grid>
               <Grid item xs={4} container alignContent="center">
                 <STypography variant="h6">50ML</STypography>
               </Grid>
-              <Grid item xs={"auto"}>
+              <Grid container item xs={6} justifyContent="flex-end">
                 <Typography variant="h5">{itemData.unit_price}</Typography>
               </Grid>
             </Grid>
