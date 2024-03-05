@@ -137,7 +137,7 @@ const mockAmProducts: IProduct[] = [
     category: {
       id: 106,
       created_at: "2024-01-21T12:00:00Z",
-      name: "Category X",
+      name: "Կատեգորիա Ա",
       published_at: "2024-01-22T08:30:00Z",
       products: [],
       updated_at: "2024-01-23T15:45:00Z",
@@ -158,7 +158,7 @@ const mockAmProducts: IProduct[] = [
     category: {
       id: 105,
       created_at: "2024-01-21T12:00:00Z",
-      name: "Category X",
+      name: "Կատեգորիա Ա",
       published_at: "2024-01-22T08:30:00Z",
       products: [],
       updated_at: "2024-01-23T15:45:00Z",
@@ -179,7 +179,7 @@ const mockAmProducts: IProduct[] = [
     category: {
       id: 104,
       created_at: "2024-01-21T12:00:00Z",
-      name: "Category X",
+      name: "Կատեգորիա Ա",
       published_at: "2024-01-22T08:30:00Z",
       products: [],
       updated_at: "2024-01-23T15:45:00Z",
@@ -200,7 +200,7 @@ const mockAmProducts: IProduct[] = [
     category: {
       id: 106,
       created_at: "2024-01-21T12:00:00Z",
-      name: "Category X",
+      name: "Կատեգորիա Ա",
       published_at: "2024-01-22T08:30:00Z",
       products: [],
       updated_at: "2024-01-23T15:45:00Z",
@@ -221,7 +221,7 @@ const mockAmProducts: IProduct[] = [
     category: {
       id: 104,
       created_at: "2024-01-21T12:00:00Z",
-      name: "Category X",
+      name: "Կատեգորիա Ա",
       published_at: "2024-01-22T08:30:00Z",
       products: [],
       updated_at: "2024-01-23T15:45:00Z",
@@ -242,7 +242,7 @@ const mockAmProducts: IProduct[] = [
     category: {
       id: 105,
       created_at: "2024-01-21T12:00:00Z",
-      name: "Category X",
+      name: "Կատեգորիա Ա",
       published_at: "2024-01-22T08:30:00Z",
       products: [],
       updated_at: "2024-01-23T15:45:00Z",
@@ -289,8 +289,6 @@ const generateMockDataSet = (count: number): IProduct[] => {
   }
   return mockDataSet;
 };
-
-const mockData: IProduct[] = generateMockDataSet(50);
 
 const mockEnSubCategories: ISubCategory[] = [
   {
