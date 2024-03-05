@@ -1,5 +1,6 @@
 import React from "react";
 import { Grid, Typography, Box } from "@material-ui/core";
+import { useMenuStore } from "../../stores/menuStore";
 import styled from "styled-components";
 
 interface Props {
@@ -17,21 +18,31 @@ const Hexagon = styled(Box)`
 const ItemGrid = styled(Grid)`
   flex: 0 -1 2rem;
 `;
+const ItemTypography = styled(Typography)`
+  font-weight: 500;
+`;
+const PriceTypography = styled(Typography)`
+  font-weight: 100;
+  font-size: 2vmin;
+`;
 const STypography = styled(Typography)`
   font-style: italic;
   margin-bottom: 2px;
-  font-size: 0.42rem;
+  font-weight: 600;
 `;
 const Description = styled(Typography)`
   margin-left: 0.1rem;
   font-size: 0.45rem;
 `;
 const PrimaryGridRow: React.FC<Props> = ({ itemData = {}, indexKey = 0 }) => {
+  const { localeLanguage } = useMenuStore();
   return (
     <>
       <Grid container key={indexKey}>
         <ItemGrid container item xs={9} alignContent="center">
-          <Typography variant="h4">{itemData.name.toUpperCase()}</Typography>
+          <ItemTypography variant="h4">
+            {itemData.name.toUpperCase()}
+          </ItemTypography>
         </ItemGrid>
 
         <Grid container item xs direction="row" justifyContent="flex-end">
@@ -48,15 +59,21 @@ const PrimaryGridRow: React.FC<Props> = ({ itemData = {}, indexKey = 0 }) => {
           {itemData.lot_price && itemData.description ? (
             <>
               <Grid container alignContent="center" item xs={4}>
-                <STypography variant="h6">{"BOTTLE"}</STypography>
+                <STypography variant="h6">
+                  {localeLanguage === "en" ? "BOTTLE" : "ՇԻՇ"}
+                </STypography>
               </Grid>
               <Grid container item xs={6} justifyContent="flex-end">
-                <Typography variant="h5">{itemData.lot_price}</Typography>
+                <PriceTypography variant="h5">
+                  {itemData.lot_price}
+                </PriceTypography>
               </Grid>
             </>
           ) : (
             <Grid container item xs={6} justifyContent="flex-end">
-              <Typography variant="h5">{itemData.unit_price}</Typography>
+              <PriceTypography variant="h5">
+                {itemData.unit_price}
+              </PriceTypography>
             </Grid>
           )}
         </Grid>
@@ -86,10 +103,14 @@ const PrimaryGridRow: React.FC<Props> = ({ itemData = {}, indexKey = 0 }) => {
                 <Hexagon />
               </Grid>
               <Grid item xs={4} container alignContent="center">
-                <STypography variant="h6">50ML</STypography>
+                <STypography variant="h6">
+                  {localeLanguage === "en" ? "50ML" : "50ՄԼ"}
+                </STypography>
               </Grid>
               <Grid container item xs={6} justifyContent="flex-end">
-                <Typography variant="h5">{itemData.unit_price}</Typography>
+                <PriceTypography variant="h5">
+                  {itemData.unit_price}
+                </PriceTypography>
               </Grid>
             </Grid>
           ) : (

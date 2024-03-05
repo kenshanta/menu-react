@@ -133,7 +133,7 @@ const mockAmProducts: IProduct[] = [
     id: 7,
     name: "Ապրանք Ա",
     created_at: "2024-01-21T12:00:00Z",
-    description: "An example product",
+    description: "Արտադրանքի օրինակ 0",
     category: {
       id: 106,
       created_at: "2024-01-21T12:00:00Z",
@@ -152,9 +152,9 @@ const mockAmProducts: IProduct[] = [
   },
   {
     id: 8,
-    name: "Ապրանք B",
+    name: "Ապրանք Ս",
     created_at: "2024-01-21T12:00:00Z",
-    description: "A testing product",
+    description: "Արտադրանքի օրինակ 1",
     category: {
       id: 105,
       created_at: "2024-01-21T12:00:00Z",
@@ -163,7 +163,7 @@ const mockAmProducts: IProduct[] = [
       products: [],
       updated_at: "2024-01-23T15:45:00Z",
       sub_categories: [],
-      locale: "en",
+      locale: "hy-AM",
     },
     unit_price: 29.99,
     lot_price: 149.95,
@@ -173,9 +173,9 @@ const mockAmProducts: IProduct[] = [
   },
   {
     id: 9,
-    name: "Ապրանք F",
+    name: "Ապրանք Լ",
     created_at: "2024-01-21T12:00:00Z",
-    description: "A test product",
+    description: "Արտադրանքի օրինակ 2",
     category: {
       id: 104,
       created_at: "2024-01-21T12:00:00Z",
@@ -184,7 +184,7 @@ const mockAmProducts: IProduct[] = [
       products: [],
       updated_at: "2024-01-23T15:45:00Z",
       sub_categories: [],
-      locale: "en",
+      locale: "hy-AM",
     },
     unit_price: 9.99,
     lot_price: 19.95,
@@ -194,9 +194,9 @@ const mockAmProducts: IProduct[] = [
   },
   {
     id: 10,
-    name: "Ապրանք C",
+    name: "Ապրանք Մ",
     created_at: "2024-01-21T12:00:00Z",
-    description: "A sample product",
+    description: "Արտադրանքի օրինակ 3",
     category: {
       id: 106,
       created_at: "2024-01-21T12:00:00Z",
@@ -205,7 +205,7 @@ const mockAmProducts: IProduct[] = [
       products: [],
       updated_at: "2024-01-23T15:45:00Z",
       sub_categories: [],
-      locale: "en",
+      locale: "hy-AM",
     },
     unit_price: 100,
     lot_price: 1000.95,
@@ -215,9 +215,9 @@ const mockAmProducts: IProduct[] = [
   },
   {
     id: 11,
-    name: "Ապրանք D",
+    name: "Ապրանք Ա",
     created_at: "2024-01-21T12:00:00Z",
-    description: "A sample product testing",
+    description: "Արտադրանքի օրինակ",
     category: {
       id: 104,
       created_at: "2024-01-21T12:00:00Z",
@@ -226,7 +226,7 @@ const mockAmProducts: IProduct[] = [
       products: [],
       updated_at: "2024-01-23T15:45:00Z",
       sub_categories: [],
-      locale: "en",
+      locale: "hy-AM",
     },
     unit_price: 30,
     lot_price: 300,
@@ -236,9 +236,9 @@ const mockAmProducts: IProduct[] = [
   },
   {
     id: 12,
-    name: "Ապրանք E",
+    name: "Ապրանք Ո",
     created_at: "2024-01-21T12:00:00Z",
-    description: "A sample product",
+    description: "Արտադրանքի նկարագրության օրինակ",
     category: {
       id: 105,
       created_at: "2024-01-21T12:00:00Z",
@@ -247,7 +247,7 @@ const mockAmProducts: IProduct[] = [
       products: [],
       updated_at: "2024-01-23T15:45:00Z",
       sub_categories: [],
-      locale: "en",
+      locale: "hy-AM",
     },
     unit_price: 10.99,
     lot_price: 49,
@@ -262,7 +262,7 @@ const generateMockData = (id: number): IProduct => {
     name: `Product ${String.fromCharCode(65 + (id % 26))}`,
     created_at: "2024-01-21T12:00:00Z",
     description: `Description for Product ${String.fromCharCode(
-      65 + (id % 26)
+      65 + (id % 26),
     )}`,
     category: {
       id: 101,
@@ -326,7 +326,7 @@ const mockAmSubCategories: ISubCategory[] = [
   {
     id: 204,
     created_at: "2024-01-21T12:00:00Z",
-    name: "Ենթակարգեր X",
+    name: "Ենթակարգեր Ե",
     published_at: "2024-01-22T08:30:00Z",
     updated_at: "2024-01-23T15:45:00Z",
     category: 104,
@@ -335,7 +335,7 @@ const mockAmSubCategories: ISubCategory[] = [
   {
     id: 205,
     created_at: "2024-01-21T12:00:00Z",
-    name: "Ենթակարգեր Y",
+    name: "Ենթակարգեր Լ",
     published_at: "2024-01-22T08:30:00Z",
     updated_at: "2024-01-23T15:45:00Z",
     category: 105,
@@ -344,7 +344,7 @@ const mockAmSubCategories: ISubCategory[] = [
   {
     id: 206,
     created_at: "2024-01-21T12:00:00Z",
-    name: "Ենթակարգեր Z",
+    name: "Ենթակարգեր Ա",
     published_at: "2024-01-22T08:30:00Z",
     updated_at: "2024-01-23T15:45:00Z",
     category: 106,
@@ -386,7 +386,7 @@ export const mockCategory: ICategory[] = [
   {
     id: 104,
     created_at: "2024-01-21T12:00:00Z",
-    name: "Կատեգորիա X",
+    name: "Կատեգորիա Ա",
     published_at: "2024-01-22T08:30:00Z",
     products: mockAmProducts,
     updated_at: "2024-01-23T15:45:00Z",
@@ -396,7 +396,7 @@ export const mockCategory: ICategory[] = [
   {
     id: 105,
     created_at: "2024-01-15T12:00:00Z",
-    name: "Կատեգորիա Y",
+    name: "Կատեգորիա Բ",
     published_at: "2024-01-15T08:30:00Z",
     products: mockAmProducts,
     updated_at: "2024-01-23T15:45:00Z",
@@ -406,7 +406,7 @@ export const mockCategory: ICategory[] = [
   {
     id: 106,
     created_at: "2024-01-15T12:00:00Z",
-    name: "Կատեգորիա Z",
+    name: "Կատեգորիա Գ",
     published_at: "2024-01-15T08:30:00Z",
     products: mockAmProducts,
     updated_at: "2024-01-23T15:45:00Z",
