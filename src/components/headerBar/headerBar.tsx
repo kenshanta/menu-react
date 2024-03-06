@@ -70,15 +70,15 @@ const HeaderBar: React.FC = observer(() => {
             container
             onClick={() => handleOnClick()}
           >
-            <Button
+            {/* <Button
               size="medium"
               disableRipple
               style={{
                 paddingRight: 0,
               }}
-            >
-              {activeIcon}
-            </Button>
+            > */}
+            {activeIcon}
+            {/* </Button> */}
           </Grid>
         </Toolbar>
       </AppBar>

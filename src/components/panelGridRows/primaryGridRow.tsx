@@ -53,7 +53,9 @@ const PrimaryGridRow: React.FC<Props> = ({ itemData = {}, indexKey = 0 }) => {
             alignContent="center"
             justifyContent="flex-start"
           >
-            <Hexagon />
+            <Grid item xs={2}>
+              <Hexagon />
+            </Grid>
           </Grid>
           {itemData.lot_price && itemData.description ? (
             <>
