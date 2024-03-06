@@ -29,10 +29,10 @@ const PanelBody: React.FC<Props> = ({ indexValue }) => {
             const productsList = currentCategoriesList[
               indexValue
             ].products.filter(
-              (product) => product.sub_category === subCategory.id
+              (product) => product.sub_category === subCategory.id,
             );
             const alphabeticallySortedList = productsList.sort((a, b) =>
-              a.name.localeCompare(b.name)
+              a.name.localeCompare(b.name),
             );
             return (
               <ProductGrid container key={index}>
@@ -46,7 +46,7 @@ const PanelBody: React.FC<Props> = ({ indexValue }) => {
                 ))}
               </ProductGrid>
             );
-          }
+          },
         )}
       </Grid>
     </Box>

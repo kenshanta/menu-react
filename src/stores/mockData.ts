@@ -256,39 +256,6 @@ const mockAmProducts: IProduct[] = [
     updated_at: "2024-01-23T15:45:00Z",
   },
 ];
-const generateMockData = (id: number): IProduct => {
-  return {
-    id,
-    name: `Product ${String.fromCharCode(65 + (id % 26))}`,
-    created_at: "2024-01-21T12:00:00Z",
-    description: `Description for Product ${String.fromCharCode(
-      65 + (id % 26),
-    )}`,
-    category: {
-      id: 101,
-      created_at: "2024-01-21T12:00:00Z",
-      name: "Category X",
-      published_at: "2024-01-22T08:30:00Z",
-      products: [],
-      updated_at: "2024-01-23T15:45:00Z",
-      sub_categories: [],
-      locale: "en",
-    },
-    unit_price: 29.99,
-    lot_price: 149.95,
-    published_at: "2024-01-22T08:30:00Z",
-    sub_category: 200,
-    updated_at: "2024-01-23T15:45:00Z",
-  };
-};
-
-const generateMockDataSet = (count: number): IProduct[] => {
-  const mockDataSet: IProduct[] = [];
-  for (let i = 1; i <= count; i++) {
-    mockDataSet.push(generateMockData(i));
-  }
-  return mockDataSet;
-};
 
 const mockEnSubCategories: ISubCategory[] = [
   {

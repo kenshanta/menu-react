@@ -1,5 +1,5 @@
 import React from "react";
-import { AppBar, Toolbar, IconButton, Grid } from "@material-ui/core";
+import { AppBar, Toolbar, Button, Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { useMenuStore } from "../../stores/menuStore";
 import { observer } from "mobx-react-lite";
@@ -70,9 +70,15 @@ const HeaderBar: React.FC = observer(() => {
             container
             onClick={() => handleOnClick()}
           >
-            <IconButton size="medium" disableRipple style={{ paddingRight: 0 }}>
+            <Button
+              size="medium"
+              disableRipple
+              style={{
+                paddingRight: 0,
+              }}
+            >
               {activeIcon}
-            </IconButton>
+            </Button>
           </Grid>
         </Toolbar>
       </AppBar>

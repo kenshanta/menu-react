@@ -10,6 +10,7 @@ const FooterBar: React.FC = () => {
         position: "inherit",
         bottom: 0,
         width: "100%",
+        height: "100%",
       }}
       alt="website footer"
       loading="lazy"
