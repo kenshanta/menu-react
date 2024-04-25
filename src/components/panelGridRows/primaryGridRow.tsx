@@ -61,7 +61,9 @@ const PrimaryGridRow: React.FC<Props> = ({ itemData = {}, indexKey = 0 }) => {
             <>
               <Grid container item xs={4}>
                 <STypography variant="h6">
-                  {localeLanguage === "en" ? "BOTTLE" : "ՇԻՇ"}
+                  {localeLanguage === "en" && itemData.sub_category === 201
+                    ? "1 Litre"
+                    : "ՇԻՇ"}
                 </STypography>
               </Grid>
               <Grid container item xs={6} justifyContent="flex-end">
@@ -100,7 +102,9 @@ const PrimaryGridRow: React.FC<Props> = ({ itemData = {}, indexKey = 0 }) => {
               </Grid>
               <Grid item xs={4} container>
                 <STypography variant="h6">
-                  {localeLanguage === "en" ? "50ML" : "50ՄԼ"}
+                  {localeLanguage === "en" && itemData.sub_category === 201
+                    ? "0.5 Litre"
+                    : "50ՄԼ"}
                 </STypography>
               </Grid>
               <Grid container item xs={6} justifyContent="flex-end">
