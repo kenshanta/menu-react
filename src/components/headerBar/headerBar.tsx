@@ -1,10 +1,10 @@
 import React from "react";
-import { AppBar, Toolbar, Button, Grid } from "@material-ui/core";
+import { AppBar, Toolbar, Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { useMenuStore } from "../../stores/menuStore";
 import { observer } from "mobx-react-lite";
 
-import { ReactComponent as LogoEnglish } from "../../assets/images/logo_en.svg";
+import { ReactComponent as LogoEnglish } from "../../assets/images/logo-no-background.svg";
 import { ReactComponent as UkIcon } from "../../assets/images/flag_uk.svg";
 import { ReactComponent as AmIcon } from "../../assets/images/flag_am.svg";
 import { ReactComponent as LogoArmenian } from "../../assets/images/logo_am.svg";
@@ -70,15 +70,7 @@ const HeaderBar: React.FC = observer(() => {
             container
             onClick={() => handleOnClick()}
           >
-            {/* <Button
-              size="medium"
-              disableRipple
-              style={{
-                paddingRight: 0,
-              }}
-            > */}
             {activeIcon}
-            {/* </Button> */}
           </Grid>
         </Toolbar>
       </AppBar>

@@ -2,7 +2,7 @@
 
 The following project is ba react powered multi language (currently supported in English & Armenian) dynamic menu that uses a headless CMS (Strapi) hosted by Heroku in order for the admin to edit items as needed.
 
-As of now the backend is no longer supported (financially unsopported) Therefore the project's data relies on mockData
+As of now the backend is no longer active (financially unsopported) Therefore the project's data relies on mockData provided in the `/src` directory
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
