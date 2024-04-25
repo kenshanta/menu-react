@@ -46,7 +46,7 @@ const NavBar: React.FC = () => {
   return (
     <AppBar
       position="sticky"
-      color="default"
+      color="transparent"
       style={{
         borderBottom: `1px solid #C47C5A`,
         overflow: "hidden !important",
