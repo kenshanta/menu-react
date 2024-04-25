@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
     minHeight: "2rem",
     justifyContent: "center",
     alignItems: "flex-start",
-    paddingTop: theme.spacing(3),
+    paddingTop: theme.spacing(1),
     paddingBottom: theme.spacing(2),
     marginLeft: "2rem",
   },
