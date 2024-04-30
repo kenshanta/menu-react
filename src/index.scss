@@ -2,7 +2,7 @@
 @font-face {
   font-family: "Audrey";
   font-weight: "bold";
-  src: url("./assets/fonts/audrey/Audrey-Normal.otf");
+  src: url("./assets/fonts/almalik/AlmalikRegular-RpPM3.otf");
 }
 @font-face {
   font-family: "AudreyM";
@@ -19,6 +19,52 @@
 
 #container {
   margin: 0;
-  padding-right: 1;
-  padding-left: 1;
+  height: 100%;
+}
+
+svg g text {
+  font-family: "Protest";
+  animation: stroke 5.5s forwards alternate;
+  stroke-width: 90px;
+  stroke: white;
+  font-size: 19.5rem;
+  letter-spacing: 0.4rem;
+  font-family: "Audrey";
+}
+
+#idUns {
+  animation: stroke 5.5s forwards alternate;
+  stroke-width: 10rem;
+  stroke: white;
+  font-size: 19.5rem;
+}
+
+@keyframes stroke {
+  0% {
+    fill: rgba(72, 138, 20, 0);
+    stroke: #8cbcb9;
+    stroke-dashoffset: 55%;
+    stroke-dasharray: 5% 35%;
+    stroke-width: 5;
+  }
+
+  50% {
+    fill: rgba(72, 138, 20, 0);
+    stroke: #7c2ba4;
+    stroke-width: 1;
+  }
+
+  75% {
+    fill: rgba(72, 138, 20, 0);
+    stroke: #c5cbd3;
+    stroke-width: 5;
+  }
+
+  100% {
+    fill: #8cbcb9;
+    stroke: rgba(54, 95, 160, 0);
+    stroke-dashoffset: -5%;
+    stroke-dasharray: 70% 0;
+    // stroke-width: ;
+  }
 }

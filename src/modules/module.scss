@@ -3,6 +3,19 @@
 body {
   // background-color: #1e2f42 !important;
   margin: 0;
-  max-height: 80vh;
+  max-height: auto;
   position: relative;
+}
+
+.customToolbar {
+  padding: 0.5rem;
+  display: flex;
+  min-height: 9rem;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 6px;
+}
+
+.headerMain {
+  min-height: 5.1rem;
 }

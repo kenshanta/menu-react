@@ -1,10 +1,10 @@
 import React from "react";
-import { Skeleton } from "@material-ui/lab";
+import Skeleton from "@mui/material/Skeleton";
 
 const PanelSkeleton: React.FC = () => {
   return (
     <div style={{ height: "100%", backgroundColor: "#f9f2ef" }}>
-      <Skeleton variant="rect" width={"100%"} height={48} />
+      <Skeleton variant="rectangular" width={"100%"} height={48} />
       <Skeleton
         variant="text"
         height={60}
