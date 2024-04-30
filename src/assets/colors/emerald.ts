@@ -1,20 +1,20 @@
-import { Color } from "@material-ui/core";
+import { Color } from "@mui/material";
 
 const emerald: Color = {
-  50: "#f8ece7",
-  100: "#C47C5A",
-  200: "#C47C5A",
-  300: "#C47C5A",
-  400: "#C47C5A",
-  500: "#C47C5A",
-  600: "#C47C5A",
-  700: "#C47C5A",
-  800: "#C47C5A",
-  900: "#C47C5A",
-  A100: "#ffdcdc",
-  A200: "#ffa9a9",
-  A400: "#C47C5A",
-  A700: "#ff5d5d",
+  50: "#ffe5bb",
+  100: "#8D6A9F",
+  200: "#8D6A9F",
+  300: "#8D6A9F",
+  400: "#8D6A9F",
+  500: "#8D6A9F",
+  600: "#8D6A9F",
+  700: "#8D6A9F",
+  800: "#8D6A9F",
+  900: "#a059ff",
+  A100: "#8D6A9F",
+  A200: "#8D6A9F",
+  A400: "#8D6A9F",
+  A700: "#8D6A9F",
 };
 
 export default emerald;

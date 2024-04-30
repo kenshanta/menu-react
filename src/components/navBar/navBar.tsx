@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { Tabs, Tab, AppBar } from "@material-ui/core";
+import { Tabs, Tab, AppBar } from "@mui/material";
 import { useMenuStore } from "../../stores/menuStore";
 import { PanelSkeleton } from "../panelBody";
 
@@ -46,9 +46,8 @@ const NavBar: React.FC = () => {
   return (
     <AppBar
       position="sticky"
-      color="transparent"
-      style={{
-        borderBottom: `1px solid #C47C5A`,
+      sx={{
+        borderBottom: `1px solid #BB342F`,
         overflow: "hidden !important",
         top: 0,
       }}
@@ -63,14 +62,14 @@ const NavBar: React.FC = () => {
           indicatorColor="secondary"
           ref={ref}
           centered={componentVariables.centered}
-          style={{ width: "100%" }}
+          sx={{ width: "100%", fontSize: "3rem" }}
         >
           {currentCategoriesList.map((category: any, i: number) => {
             return (
               <Tab
                 key={i}
                 label={<h4>{category.name}</h4>}
-                style={{ margin: "0" }}
+                sx={{ margin: "0", fontSize: "1.2rem" }}
               />
             );
           })}

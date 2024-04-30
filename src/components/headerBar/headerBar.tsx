@@ -1,38 +1,13 @@
 import React from "react";
-import { AppBar, Toolbar, Grid } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
+import { AppBar, Toolbar, Grid } from "@mui/material";
 import { useMenuStore } from "../../stores/menuStore";
 import { observer } from "mobx-react-lite";
 
 import { ReactComponent as LogoEnglish } from "../../assets/images/logo-no-background.svg";
 import { ReactComponent as UkIcon } from "../../assets/images/flag_uk.svg";
 import { ReactComponent as AmIcon } from "../../assets/images/flag_am.svg";
-import { ReactComponent as LogoArmenian } from "../../assets/images/logo_am.svg";
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    marginBottom: 1,
-    height: "calc(20%)",
-  },
-  parentDiv: {
-    marginRight: theme.spacing(2),
-  },
-  toolbar: {
-    display: "flex",
-    minHeight: "2rem",
-    justifyContent: "center",
-    alignItems: "flex-start",
-    paddingTop: theme.spacing(1),
-    paddingBottom: theme.spacing(2),
-    marginLeft: "2rem",
-  },
-  title: {
-    flexGrow: 1,
-    alignSelf: "flex-end",
-  },
-}));
+import "../../modules/module.scss";
 const HeaderBar: React.FC = observer(() => {
-  const classes = useStyles();
   const { setLocaleLanguage, localeLanguage } = useMenuStore();
 
   const handleOnClick = () => {
@@ -40,12 +15,8 @@ const HeaderBar: React.FC = observer(() => {
   };
 
   const activeLogo = React.useMemo(() => {
-    if (localeLanguage === "en") {
-      return <LogoEnglish />;
-    } else {
-      return <LogoArmenian />;
-    }
-  }, [localeLanguage]);
+    return <LogoEnglish />;
+  }, []);
 
   const activeIcon = React.useMemo(() => {
     if (localeLanguage === "en") {
@@ -56,10 +27,15 @@ const HeaderBar: React.FC = observer(() => {
   }, [localeLanguage]);
 
   return (
-    <Grid container direction="row" className={classes.root}>
+    <Grid
+      // sx={{ height: "7rem" }}
+      container
+      direction="row"
+      className={"headerMain"}
+    >
       <AppBar position="sticky">
-        <Toolbar className={classes.toolbar}>
-          <Grid container item xs={12} justifyContent="center">
+        <Toolbar className="customToolbar">
+          <Grid container item xs={11} justifyContent="center">
             {activeLogo}
           </Grid>
           <Grid

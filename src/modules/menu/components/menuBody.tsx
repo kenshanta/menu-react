@@ -1,7 +1,7 @@
 import React from "react";
 import SwipeableViews from "react-swipeable-views";
-import { useTheme } from "@material-ui/core/styles";
-import { Grid } from "@material-ui/core";
+import { useTheme } from "@mui/material/styles";
+import { Grid, Typography } from "@mui/material";
 import { useMenuStore } from "../../../stores/menuStore";
 import { PanelBody } from "../../../components/panelBody";
 import { NavBar } from "../../../components/navBar";
