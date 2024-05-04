@@ -13,6 +13,7 @@
     "@mui/material": "^5.15.15",
     "@mui/styles": "^5.15.15",
     "@mui/system": "^5.15.15",
+    "@svgr/webpack": "^8.1.0",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.0.0",
     "@testing-library/user-event": "^13.2.1",
@@ -65,5 +66,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "resolutions": {
+    "@svgr/webpack": "8.1.0"
   }
 }
