@@ -1,9 +1,7 @@
 import React, { Suspense } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Routes } from "./modules";
-// import { ThemePrimary } from "./assets/theme";
 import { ThemeProvider } from "@mui/material/styles";
-// import { StyledEngineProvider } from "@mui/material/styles";
 import { useMenuStore } from "./stores/menuStore";
 import { MenuService } from "./services";
 import { PanelSkeleton } from "./components/panelBody";
@@ -63,7 +61,6 @@ let theme = createTheme({
           fontFamily: "Audrey",
         },
         wrapped: {
-          // margin: "0 .3rem 0",
           padding: "0 0 0",
           fontWeight: 100,
         },
@@ -102,13 +99,12 @@ let theme = createTheme({
   },
 });
 const App: React.FC = () => {
-  const { localeLanguage, setCurrentCategoriesList, setLocaleCategoriesList } =
+  const { localeLanguage, setCurrentCategoriesList } =
     useMenuStore();
 
   React.useEffect(() => {
     const fetchCategoriesList = async () => {
       const productItemsList = await MenuService.getCategoriesByLocale("all");
-      // setLocaleCategoriesList(productItemsList);
       logicalOperator(productItemsList);
     };
     const logicalOperator = (data: any) => {
@@ -130,7 +126,6 @@ const App: React.FC = () => {
   });
 
   return (
-    // <StyledEngineProvider injectFirst>
     <Suspense fallback={<PanelSkeleton />}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
@@ -139,7 +134,6 @@ const App: React.FC = () => {
         </Router>
       </ThemeProvider>
     </Suspense>
-    // </StyledEngineProvider>
   );
 };
 
