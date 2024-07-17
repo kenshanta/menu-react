@@ -22,7 +22,6 @@
     "@types/react": "18",
     "@types/react-dom": "18",
     "@types/react-router-dom": "^5.1.8",
-    "awesome-typescript-loader": "^5.2.1",
     "axios": "^1.6.0",
     "i18next": "^20.4.0",
     "mobx": "^6.3.2",
